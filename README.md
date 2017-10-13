@@ -13,8 +13,10 @@ request.
 1. The site https://en.wikipedia.org/wiki/List_of_cities_in_North_Dakota lists the cities in
 North Dakota by population. Ask for a position and then display the city in that position
 and its estimated 2015 population
+
 2. The IP number of your machine and host name of the machine.
 The information can be found at https://www.iplocation.net/find-ip-address
+
 3. The faculty in the CS department and their research interests. Indent the research
 interests of each faculty member. The output for each faculty member could look
 something like:
@@ -26,12 +28,16 @@ Tom Stokke
 ```
 The information can be found at
 http://engineering.und.edu/computer-science/faculty-staff.cfm
+
 4. Number of tweets from the official UND Twitter account.
 The information can be found at https://twitter.com/UofNorthDakota
+
 5. Today’s Dow Jones Industrial Average and today’s numeric change (not percent).
 The information can be found at http://money.cnn.com/data/markets/dow/
+
 6. The current temperature in Grand Forks. The information can be found at
 https://weather.com/weather/tenday/l/USND0146:1:US
+
 7. Ask the user for a team name. The team name will not have to be an exact match.
 Display every NFL football team that matches the entered text (city OR team name).
 The match does not have to be case-specific. Display the team name, their wins, losses
