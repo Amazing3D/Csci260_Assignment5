@@ -12,8 +12,6 @@ use utf8;
 
 my ( $webpage, $currentPage, $currentsection, $info, $selection, $name, $testvar );
 
-sub trim { my $s = shift; $s =~ s/^\s+|\s+$//g; return $s }
-
 #Ip address and Host Name
 $currentPage = "http://www.nfl.com/standings";
 
@@ -26,13 +24,13 @@ print "\nEnter a team city or name: ";
 chomp( $name = <STDIN> );
 
 # while ( $currentsection =~ /<a href="\/teams\/profile\?team=\w\w\w">\n\t{6}(.{0,30})$name(.*?)<\/a>(.*?)<\/tr>/sgi ) {    #find the table row where the team is.
-while ( $currentsection =~ /<a href="\/teams\/profile\?team=\w\w\w">\n\t{6}(.{0,30})$name(.*?)<\/a>(.*?)<\/tr>/sgi ) {    #find the table row where the team is.
+while ( $currentsection =~ /<a href="\/teams\/profile\?team=\w\w\w">\n\t{6}(.{0,30})$name(.*?)<\/a>(.*?)<\/tr>/sgi ) { #find the table row where the team is.
     $testvar = $3;
-    $info    = $1 . $name . $2;                                                                                           #get all parts of the name of the team
+    $info    = $1 . $name . $2;                                                                                        #get all parts of the name of the team
 
-    $info =~ s/\r?\n\s*|\r\s*//gs;                                                                                        #remove the newline and all the spaces before what was the </a>
+    $info =~ s/\r?\n\s*|\r\s*//gs;                                                                                     #remove the newline and all the spaces before what was the </a>
 
-    $info =~ s/\b(\w)(\w*)/\U$1\L$2/g;                                                                                    #capitalize the first letter of each word
+    $info =~ s/\b(\w)(\w*)/\U$1\L$2/g;                                                                                 #capitalize the first letter of each word
     print "$info";
 
     $testvar =~ /<\/td>.*?<td>(.*?)<\/td>.*?<td>(.*?)<\/td>.*?<td>(.*?)<\/td>.*?<td class/s;
