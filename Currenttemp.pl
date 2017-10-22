@@ -10,13 +10,11 @@ use LWP::Simple;
 use strict;
 use utf8;
 
-my ( $webpage, $currentPage, $currentsection, $info, $selection, $name );
+my ( $webpage, $currentPage, $currentsection, $info, $selection, $name, $day );
 
 #Ip address and Host Name
 $currentPage = "https://weather.com/weather/tenday/l/USND0146:1:US";
 
 $webpage = get $currentPage;
-print $webpage;
-open( OUTFILE, ">output.txt" ) or die;
-printf OUTFILE $webpage;
-close(OUTFILE);
+$webpage =~ /"temperature":(.*?),(.*)/s;
+print "\nCurrent Temp: $1\n";
